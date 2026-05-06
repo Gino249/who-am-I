@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Gino Villamor Badana | The Spark That Wouldn't Die</title>
+    <!-- Preconnect for performance & modern fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts: Inter for clean UI, Playfair Display for elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fbfaf8;
+            font-family: 'Inter', sans-serif;
+            color: #1a1e2b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* sophisticated container utility */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* modern glassmorphic header / nav */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 253, 250, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 100;
+            transition: all 0.2s ease;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1e2a3e, #0f2b3d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-weight: 300;
+            color: #2c5f7a;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e44;
+            font-weight: 500;
+            margin-left: 2rem;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: #c4452c;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0 4rem 0;
+            background: radial-gradient(circle at 10% 30%, rgba(230,245,245,0.5) 0%, rgba(251,250,248,1) 90%);
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: #1a2c32;
+        }
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #4a5b62;
+            border-left: 4px solid #c4452c;
+            padding-left: 1.2rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 400;
+        }
+        .badge-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .badge {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        /* timeline / story cards */
+        .story-section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #c4452c;
+        }
+
+        .story-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        .milestone-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .milestone-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.12);
+        }
+        .milestone-icon {
+            background: #f4f2ef;
+            min-width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #c4452c;
+        }
+        .milestone-content {
+            flex: 1;
+            padding: 2rem 2rem 2rem 0;
+        }
+        .milestone-year {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #c4452c;
+            margin-bottom: 0.5rem;
+        }
+        .milestone-title {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .milestone-text {
+            color: #2d3e45;
+            line-height: 1.6;
+        }
+        .quote-note {
+            margin-top: 1.25rem;
+            font-style: italic;
+            border-left: 2px solid #c4452c30;
+            padding-left: 1rem;
+            color: #4f5e66;
+        }
+
+        /* robotics champion highlight */
+        .champion-block {
+            background: linear-gradient(105deg, #fff8f0 0%, #ffffff 100%);
+            border-radius: 28px;
+            padding: 2.5rem;
+            margin: 2rem 0 0;
+            border: 1px solid #f0e0cf;
+        }
+
+        /* footer & contact */
+        .footer {
+            background: #0f2128;
+            color: #cddbdf;
+            padding: 3rem 0 2.5rem;
+            margin-top: 3rem;
+        }
+        .footer a {
+            color: #e9b6a4;
+            text-decoration: none;
+        }
+        .social-icons a {
+            font-size: 1.4rem;
+            margin-right: 1.2rem;
+            transition: color 0.2s;
+        }
+        .social-icons a:hover {
+            color: #ffffff;
+        }
+
+        /* responsive */
+        @media (max-width: 800px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .milestone-card {
+                flex-direction: column;
+            }
+            .milestone-icon {
+                padding: 1rem 0;
+                min-width: auto;
+            }
+            .milestone-content {
+                padding: 0 1.5rem 1.8rem 1.5rem;
+            }
+            .nav-links a {
+                margin-left: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .hero {
+                padding: 3rem 0;
+            }
+        }
+
+        /* motion */
+        @keyframes subtleFade {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .milestone-card, .hero-content {
+            animation: subtleFade 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container nav-wrapper">
+        <div class="logo">Gino Villamor <span>Badana</span></div>
+        <div class="nav-links">
+            <a href="#story">Journal</a>
+            <a href="#triumph">Triumph</a>
+            <a href="#future">Future</a>
+            <a href="#connect">Connect</a>
+        </div>
+    </div>
+</div>
+
+<main>
+    <!-- Hero - first impression -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>The Spark That<br>Wouldn't Die</h1>
+            <div class="hero-tagline">
+                <i class="fas fa-microchip" style="margin-right: 8px; color:#c4452c;"></i> 
+                Electronics Engineering · Robotics Champion · Newtonian curiosity
+            </div>
+            <p style="max-width: 640px; font-size:1.05rem; margin-bottom:1.5rem;">
+                From magnets to microcontrollers, from silence to victory — engineered resilience, one system at a time.
+            </p>
+            <div class="badge-grid">
+                <span class="badge"><i class="fas fa-code"></i> Full-stack mindset</span>
+                <span class="badge"><i class="fas fa-robot"></i> Champion builder</span>
+                <span class="badge"><i class="fas fa-graduation-cap"></i> EVSU · ECE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story timeline - professional autobiography narrative -->
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="section-title">The Equation of Resilience</div>
+            <div class="story-grid">
+                <!-- chapter 1: magnets -->
+                <div class="milestone-card">
+                    <div class="milestone-icon"><i class="fas fa-magnet"></i></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">childhood · the invisible forces</div>
+                        <div class="milestone-title">Magnets & Unseen Worlds</div>
+                        <div class="milestone-text">
+                            Long before I became an engineering student, I was a child fascinated by the invisible forces of the universe. 
+                            While other kids saw toys, I saw potential: experimenting with magnetic repulsion, building miniature cars from scraps, and trying to decode the grammar of physics with my own bare hands. 
+                            For a while, my imagination was my only laboratory — a quiet place where curiosity had no limits.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chapter 2: silence and criticism -->
+                <div class="milestone-card">
+                    <div class="milestone-icon"><i class="fas fa-comment-slash"></i></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">the trial · shadows of judgment</div>
+                        <div class="milestone-title">Silence and Criticism</div>
+                        <div class="milestone-text">
+                            The world can be cruel to a curious mind. My passions were dismissed as “childish.” Even worse, I faced humiliation from those closest to me — 
+                            labelled <i>“tanga”</i> and <i>“bobo”</i>. For a time, the noise of the world was louder than my own dreams. I almost let the spark go out. 
+                            Shyness became armor: I hid my potential, afraid of embarrassment, afraid of being ridiculed again.
+                        </div>
+                        <div class="quote-note">
+                            <i class="fas fa-quote-left" style="margin-right: 6px; opacity:0.6;"></i> But silence doesn't erase potential — it only sharpens it.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chapter 3: coding & creation pivot -->
+                <div class="milestone-card">
+                    <div class="milestone-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">grade 10 · a new language</div>
+                        <div class="milestone-title">Coding & Creation</div>
+                        <div class="milestone-text">
+                            In Grade 10, I found a new tongue: Code. By Grade 11, I was architecting systems using HTML, CSS, JavaScript, PHP, and SQL. 
+                            I realized that while my relatives saw someone “dumb,” the computer saw a creator. My suppressed imagination finally found a home in the logic of databases and 
+                            the elegance of full-stack web systems. I wasn’t just learning — I was engineering a better version of myself. 
+                            Each line of code rebuilt confidence from the ground up.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chapter 4: robotics champion (triumph) -->
+                <div class="milestone-card" id="triumph">
+                    <div class="milestone-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">defeat → fuel → victory</div>
+                        <div class="milestone-title">From Silence to Champion</div>
+                        <div class="milestone-text">
+                            The turning point arrived with Robotics. My first attempt ended in a heart‑breaking defeat. But instead of giving up — as the critics expected — 
+                            I used failure as propellant. Countless sleepless nights tinkering with actuators, writing embedded logic, and refining mechanical design. 
+                            That shy kid who used to hide in the shadows emerged as a <strong>Robotics Champion</strong>. The arena taught me that the hidden equation of genius 
+                            is not just IQ — it's the grit to keep iterating when others root for your downfall. 
+                        </div>
+                        <div class="quote-note">
+                            <i class="fas fa-microchip"></i> “I proved that resilience is the ultimate algorithm.”
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- extra highlighted triumph block with backend/frontend reference -->
+            <div class="champion-block">
+                <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                    <i class="fas fa-crown" style="font-size: 2.2rem; color:#c4452c;"></i>
+                    <span style="font-weight: 700; font-size: 1.25rem;">Robotics Champion · Full‑Stack Problem Solver</span>
+                </div>
+                <p style="margin-top: 1rem;">
+                    That championship mindset now fuels my engineering journey. Whether it's an embedded system or a high-performance web platform, 
+                    I treat every challenge like a robotics match: <strong>analyze, iterate, execute.</strong> My proficiency in frontend (HTML/CSS/JS) and backend (PHP, SQL) 
+                    goes hand-in-hand with hardware intuition — a rare bridge between digital and physical realms.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future & EVSU - Electronics Engineering -->
+    <section class="story-section" style="padding-top: 0;" id="future">
+        <div class="container">
+            <div class="section-title">The Architect’s Path</div>
+            <div class="milestone-card" style="margin-bottom: 2rem;">
+                <div class="milestone-icon"><i class="fas fa-university"></i></div>
+                <div class="milestone-content">
+                    <div class="milestone-year">present · 2nd year, EVSU Main</div>
+                    <div class="milestone-title">Electronics Engineering: Forging the Future</div>
+                    <div class="milestone-text">
+                        Today, I am a second-year Electronics Engineering (ECE) student at EVSU Main. The path is demanding, and the “spark” sometimes flickers under the weight 
+                        of academic pressure and isolation. There are evenings alone in my room, overthinking deadlines and wondering if the sacrifice will pay off. 
+                        Yet, I keep going — for that kid who played with magnets, for the teenager who coded until sunrise to feel seen. I persist because I know that 
+                        within the human mind lies the ability to comprehend the universe itself. I am not a product of the cruelty I faced; I am the architect of a future I once only dreamed of.
+                    </div>
+                    <div class="quote-note" style="margin-top: 1rem;">
+                        <i class="fas fa-brain"></i>  “The same force that guides electrons through a circuit drives me to transcend every limit.”
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; margin-top: 1rem;">
+                <div style="background: white; border-radius: 24px; padding: 1.5rem; flex:1; min-width: 180px; border: 1px solid #f1e4db;">
+                    <i class="fas fa-flask" style="font-size: 1.8rem; color:#c4452c;"></i>
+                    <h3 style="margin: 0.8rem 0 0.4rem;">Newtonian Curiosity</h3>
+                    <p style="font-size:0.9rem; color:#4f5f66;">Experiment, observe, deduce — the same spirit that drives great scientists.</p>
+                </div>
+                <div style="background: white; border-radius: 24px; padding: 1.5rem; flex:1; min-width: 180px; border: 1px solid #f1e4db;">
+                    <i class="fas fa-database" style="font-size: 1.8rem; color:#c4452c;"></i>
+                    <h3 style="margin: 0.8rem 0 0.4rem;">Full‑Stack Mind</h3>
+                    <p style="font-size:0.9rem; color:#4f5f66;">From SQL to JavaScript, embedded C to PHP — holistic engineering.</p>
+                </div>
+                <div style="background: white; border-radius: 24px; padding: 1.5rem; flex:1; min-width: 180px; border: 1px solid #f1e4db;">
+                    <i class="fas fa-chart-line" style="font-size: 1.8rem; color:#c4452c;"></i>
+                    <h3 style="margin: 0.8rem 0 0.4rem;">Resilience Quotient</h3>
+                    <p style="font-size:0.9rem; color:#4f5f66;">Turning defeats into blueprints. Champions are not born — they're debugged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect / call to action with professional backend/frontend ethos -->
+    <section style="padding: 2rem 0 4rem;" id="connect">
+        <div class="container">
+            <div class="section-title">Beyond the Code</div>
+            <div style="background: #ffffffea; border-radius: 32px; padding: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.02); border: 1px solid #eff0f2;">
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between;">
+                    <div style="max-width: 550px;">
+                        <h3 style="font-size: 1.5rem; font-family: 'Playfair Display';">Let’s build something that matters.</h3>
+                        <p style="margin: 1rem 0 1.5rem; color:#2e4b55;">I blend hardware intuition with software craftsmanship — from robotics control logic to modern web platforms. If you're looking for a resilient engineer who sees the invisible forces, I'd love to connect.</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="#" style="background: #1e2a3e; color: white; padding: 0.6rem 1.6rem; border-radius: 40px; text-decoration: none; font-weight: 500; transition: 0.2s
